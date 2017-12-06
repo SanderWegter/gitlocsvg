@@ -1,0 +1,19 @@
+[plotrange]
+# number of weeks back from now to print. Comment out for the full repository
+# history
+weeks: 12
+
+[colors]
+# define colors as "rgb(R, G, B)" with R, G, B between 0 and 255
+adds: rgb(0,255,0)
+dels: rgb(0, 0, 255)
+locline: rgb(255, 0, 0)
+axis: rgb(0, 0, 0)
+grid: rgb(199, 200, 200)
+
+[exclude]
+# exclude files in the repository by regex. multiple lines are allowed here.
+# following lines must be indented.
+files: ^img/
+       ^doc/
+       .pyc$

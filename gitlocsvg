@@ -1,0 +1,631 @@
+#!/usr/bin/python
+# =====================================================================
+#
+# gitlocsvg
+#
+# git repository "lines of code" evolution as interactive vector
+# graphics.
+#
+# =====================================================================
+#
+# Copyright (C) 2017 crokkon
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http:#www.gnu.org/licenses/>.
+#
+#
+# Date: 2017-12-06
+#
+# =====================================================================
+
+import os
+import re
+import sys
+import operator
+import datetime
+import time
+import calendar
+import math
+import copy
+import ConfigParser
+import subprocess
+import tempfile
+
+class commit:
+    def __init__(self, shorthash, timestamp, commitmsg, loc=0, adds=0, \
+            dels=0, x=-1, y=-1):
+        if type(shorthash)==list:
+            self.shorthash = shorthash
+        else:
+            self.shorthash = [shorthash]
+        self.timestamp = timestamp
+        if type(commitmsg)==list:
+            self.commitmsg = commitmsg
+        else:
+            self.commitmsg = [commitmsg]
+        self.adds = adds
+        self.dels = dels
+        self.loc = loc
+        self.x = x
+        self.y = y
+
+    def setCoordinates(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        shorthash = self.shorthash
+        timestamp = self.timestamp
+        commitmsg = self.commitmsg
+        loc = self.loc
+        x = self.x
+        y = self.y
+        adds = self.adds
+        dels = self.dels
+        extend = False
+        for otherhash, othermsg in zip(other.shorthash, other.commitmsg):
+            if not otherhash in self.shorthash:
+                shorthash.append(otherhash)
+                commitmsg.append(othermsg)
+                extend = True
+        if extend:
+            adds = self.adds + other.adds
+            dels = self.dels + other.dels
+            loc = self.loc + (other.adds - other.dels)
+            y = other.y
+        return commit(shorthash=shorthash, timestamp=timestamp, adds=adds, \
+                dels=dels, loc=loc, commitmsg=commitmsg, x=x, y=y)
+
+    def __lt__(self, other):
+        return self.timestamp < other.timestamp
+
+    def __str__(self):
+        hashstring = " + ".join(self.shorthash)
+        commitstring = " + ".join(self.commitmsg)
+        return "shorthash:%s, timestamp:%d, adds:%d, dels:%d, loc:%d, " \
+                "x:%d, y:%d, commitmsg:%s" % (hashstring, self.timestamp, \
+                self.adds, self.dels, self.loc, self.x, self.y, commitstring)
+
+class svgwriter:
+    def __init__(self, list_of_commits, width, height, config):
+        self.paddingLeft = 80
+        self.paddingBottom = 120
+        self.axisOverlap = 10
+        self.hoverWidth = 10
+        self.maxCommitsPerTooltip = 5
+        self.maxCharsPerTooltipLine = 50
+
+        self.__list_of_commits = list_of_commits
+        self.__maxloc = 0
+        self.__minloc = 0
+        self.__mintime = 0
+        self.__maxtime = 0
+        self.__svgWidth = width
+        self.__svgHeight = height
+        self.__locGridStep = 0
+        self.__timeGridStep = 0
+        self.__setupLocGrid()
+        self.__setupTimeGrid()
+
+    def __time2x(self, timeval):
+        return int(float(timeval - self.__mintime) / \
+                float(self.__maxtime - self.__mintime) * self.__svgWidth) + \
+                self.paddingLeft
+
+    def __loc2y(self, locval):
+        return self.__svgHeight - int((float(locval - self.__minloc) / \
+                float(self.__maxloc - self.__minloc) * \
+                self.__svgHeight))
+
+    def __setupLocGrid(self):
+        gridstep = 1
+        pixels_per_gridstep = 0
+        muliplicator = 5
+        max_loc_value = max(entry.adds+entry.loc for entry in self.__list_of_commits)
+        min_loc_value = min(entry.loc-entry.dels for entry in self.__list_of_commits)
+        loc_range = max_loc_value - min_loc_value
+        max_loc_value += loc_range * 0.05
+        min_loc_value -= loc_range * 0.05
+        while(pixels_per_gridstep < 30.0):
+            gridstep *= muliplicator
+            steps = float(max_loc_value - min_loc_value) / float(gridstep)
+            pixels_per_gridstep = float(self.__svgHeight) / float(steps)
+            muliplicator = 2 if muliplicator==5 else 5
+        self.__maxloc = int(math.ceil(float(max_loc_value) / float(gridstep)) * \
+                gridstep)
+        self.__minloc = int(math.floor(float(min_loc_value) / float(gridstep)) * \
+                gridstep)
+        self.__locGridStep = int(gridstep)
+
+    def __ts2str(self, ts):
+        timeval = datetime.date.fromtimestamp(ts)
+        if self.__timeGridStep=="year":
+            return timeval.strftime("%Y")
+        elif self.__timeGridStep=="mon":
+            return timeval.strftime("%b %Y")
+        else: # "day" or "week" # elif self.__timeGridStep=="day":
+            return timeval.strftime("%a %d.%m.%y")
+
+    def __setupTimeGrid(self):
+        firstts = self.__list_of_commits[0].timestamp
+        lastts = self.__list_of_commits[-1].timestamp
+        timediff = lastts - firstts
+        days = timediff/(60*60*24)
+        days_per_pixel = float(days) / float(self.__svgWidth)
+        sys.stderr.write(str(days_per_pixel) + "\n")
+        if days_per_pixel > 1:
+            self.__timeGridStep = "year"
+            self.__mintime = self.__ts_start_of_year(firstts)
+            self.__maxtime = self.__ts_start_of_next_year(lastts)
+        elif days_per_pixel > 0.06:
+            self.__timeGridStep = "mon"
+            self.__mintime = self.__ts_start_of_month(firstts)
+            self.__maxtime = self.__ts_start_of_next_month(lastts)
+        elif days_per_pixel > 0.02:
+            self.__timeGridStep = "week"
+            self.__mintime = self.__ts_start_of_week(firstts)
+            self.__maxtime = self.__ts_start_of_next_week(lastts)
+        else:
+            self.__timeGridStep = "day"
+            self.__mintime = self.__ts_start_of_day(firstts)
+            self.__maxtime = self.__ts_start_of_next_day(lastts)
+        sys.stderr.write("mintime: "+str(self.__mintime)+", maxtime: "+str(self.__maxtime)+"\n")
+
+    def __ts_start_of_day(self, ts):
+        timeval = datetime.date.fromtimestamp(ts)
+        return int(timeval.strftime("%s"))
+
+    def __ts_start_of_week(self, ts):
+        timeval = datetime.date.fromtimestamp(ts)
+        weekday = datetime.date.isoweekday(timeval)
+        sow = timeval + datetime.timedelta(days=(1 - weekday))
+        sys.stderr.write(str(timeval) + " - " + str(weekday) + " - " + str(sow) + "\n")
+        return int(sow.strftime("%s"))
+
+    def __ts_start_of_month(self, ts):
+        timeval = datetime.date.fromtimestamp(ts)
+        return int(datetime.date(timeval.year, timeval.month, 1).strftime("%s"))
+
+    def __ts_start_of_year(self, ts):
+        timeval = datetime.date.fromtimestamp(ts)
+        return int(datetime.date(timeval.year, 1, 1).strftime("%s"))
+
+    def __ts_start_of_next_day(self, ts):
+        timeval = datetime.date.fromtimestamp(ts)
+        day = timeval.day + 1
+        month = timeval.month
+        year = timeval.year
+        if day > calendar.monthrange(year, month)[1]:
+            day = 1
+            month += 1
+        if month > 12:
+            month = 1
+            year += 1
+        return int(datetime.date(year, month, day).strftime("%s"))
+
+    def __ts_start_of_next_week(self, ts):
+        timeval = datetime.date.fromtimestamp(ts)
+        weekday = datetime.date.isoweekday(timeval)
+        sow = timeval + datetime.timedelta(days=(1 - weekday) + 7)
+        sys.stderr.write(str(timeval) + " - " + str(weekday) + " - " + str(sow) + "\n")
+        return int(sow.strftime("%s"))
+
+    def __ts_start_of_next_month(self, ts):
+        timeval = datetime.date.fromtimestamp(ts)
+        month = timeval.month + 1
+        year = timeval.year
+        if month > 12:
+            month = 1
+            year += 1
+        return int(datetime.date(year, month, 1).strftime("%s"))
+
+    def __ts_start_of_next_year(self, ts):
+        timeval = datetime.date.fromtimestamp(ts)
+        return int(datetime.date(timeval.year+1, 1, 1).strftime("%s"))
+
+    def __ts_increment(self, ts):
+        if self.__timeGridStep=="day":
+            return self.__ts_start_of_next_day(ts)
+        elif self.__timeGridStep=="week":
+            return self.__ts_start_of_next_week(ts)
+        elif self.__timeGridStep=="mon":
+            return self.__ts_start_of_next_month(ts)
+        elif self.__timeGridStep=="year":
+            return self.__ts_start_of_next_year(ts)
+        else:
+            return 0
+
+    def __loc2str(self, locval):
+        """ get human readable version of number,
+        based on https://stackoverflow.com/questions/1094841 """
+        locrange = self.__maxloc - self.__minloc
+        for unit in ['','k','M','G']:
+            if abs(locval) < 1000.0 or locrange < 1000:
+                if locval==int(locval):
+                    return "%3d%s" % (locval, unit)
+                else:
+                    return "%3.1f%s" % (locval, unit)
+            locval /= 1000.0
+            locrange /= 1000
+
+    def __svgLine(seld, x0, y0, x1, y1, color=""):
+        line = """<polyline points="%u,%u %u,%u" """ % \
+                (x0, y0, x1, y1)
+        if color:
+            line += """style="stroke:%s" """ % (color)
+        line += """/>\n"""
+        return line
+
+
+    def __drawGrid(self):
+        xmin = self.__time2x(self.__mintime) - self.axisOverlap
+        x = self.__time2x(self.__mintime)
+        xmax = self.__time2x(self.__maxtime)
+        ymin = self.__loc2y(self.__minloc) + self.axisOverlap
+        y = self.__loc2y(self.__minloc)
+        ymax = self.__loc2y(self.__maxloc)
+
+        # draw y grid
+        ygrid = ""
+        ylabels = ""
+        for locval in range(self.__minloc, self.__maxloc, self.__locGridStep):
+            yval = self.__loc2y(locval)
+            locvalstr = self.__loc2str(locval)
+            ygrid += self.__svgLine(x, yval, xmax, yval, \
+                    color=config.svg_color_grid)
+            ylabels += """<text x="%u" y="%u" text-anchor="end">%s</text>\n""" % \
+                    (x-5, yval, locvalstr)
+
+        # draw x grid
+        ts = self.__ts_increment(self.__mintime)
+        xgrid = ""
+        xlabels = ""
+        while( ts <= self.__maxtime ):
+            xval = self.__time2x(ts)
+            xgrid += self.__svgLine(xval, ymax, xval, y, \
+                    color=config.svg_color_grid)
+            xlabels += """<text x="%u" y="%u" text-anchor="end" """ \
+                    """ transform="rotate(-90,%u,%u)">%s</text>\n""" % \
+                    (xval, y+5, xval, y+5, self.__ts2str(ts))
+            ts = self.__ts_increment(ts)
+
+        # draw rulers
+        xrule = self.__svgLine(xmin, y, xmax, y, color=config.svg_color_axis)
+        yrule = self.__svgLine(x, ymin, x, ymax, color=config.svg_color_axis)
+        return xgrid+ygrid+xrule+yrule+xlabels+ylabels
+
+    def __createMergedCommitList(self, listOfCommits, mergeDistance=1):
+        xmin = self.__time2x(self.__mintime)
+        xmax = self.__time2x(self.__maxtime)
+        newlist = copy.deepcopy(self.__list_of_commits)
+
+        for x in range(xmin, xmax, mergeDistance):
+            entries = [entry for entry in newlist if entry.x in \
+                    range(x, x+mergeDistance)]
+            if len(entries) > 0:
+                merged_entry = copy.deepcopy(entries[0])
+                for idx in range(1, len(entries)):
+                    merged_entry = merged_entry + entries[idx]
+                merged_entry.setCoordinates(x, merged_entry.y)
+                for entry in entries:
+                    newlist.remove(entry)
+                newlist.append(merged_entry)
+        return sorted(newlist)
+
+
+    def __drawCommits(self):
+        for entry in self.__list_of_commits:
+            entry.setCoordinates(self.__time2x(entry.timestamp),
+                    self.__loc2y(entry.loc))
+        commits = self.__createMergedCommitList(self.__list_of_commits)
+
+        list_of_locs = []
+        addbars = ""
+        delbars = ""
+        ymin = self.__loc2y(self.__minloc)
+        ymax = self.__loc2y(self.__maxloc)
+        # draw LOC line, add bars and del bars
+        prev_y = commits[0].y
+        for entry in commits:
+            list_of_locs.append("%u,%u" % (entry.x, prev_y))
+            list_of_locs.append("%u,%u" % (entry.x, entry.y))
+            add_y = self.__loc2y(entry.loc+entry.adds)
+            del_loc = entry.loc - entry.dels
+            del_y = self.__loc2y(del_loc) if del_loc > 0 else self.__loc2y(0)
+            addbars += self.__svgLine(entry.x, entry.y, entry.x, add_y, \
+                    color=config.svg_color_adds)
+            delbars += self.__svgLine(entry.x, entry.y, entry.x, del_y, \
+                    color=config.svg_color_dels)
+            prev_y = entry.y
+        locline = """<polyline points="%s" class="a" style="stroke:%s"/>\n""" % \
+                 (' '.join(list_of_locs), config.svg_color_locline)
+
+        hoverlist = self.__createMergedCommitList(self.__list_of_commits, \
+                mergeDistance=self.hoverWidth)
+        hover = ""
+        # draw hover rects with commit messages
+        for entry in hoverlist:
+            title = "%d Lines of code, %d adds, %d dels&#013;&#010;" % (entry.loc, entry.adds, entry.dels)
+            for (sh, msg) in zip(entry.shorthash[:self.maxCommitsPerTooltip], \
+                    entry.commitmsg[:self.maxCommitsPerTooltip]):
+                msgcrop = msg[:self.maxCharsPerTooltipLine]+"..." \
+                        if len(msg)>self.maxCharsPerTooltipLine else msg
+                title += """[%s] %s&#13;&#010;""" % (sh, self.__svgQuoteString(msgcrop))
+            remainingCommits = len(entry.shorthash) - self.maxCommitsPerTooltip
+            if remainingCommits > 0:
+                title += "...and %d more." % (remainingCommits)
+            hover += """<rect x="%u" y="%u" width="%u" height="%u" """ \
+                    """ class="o"><title>%s</title></rect>\n""" % (entry.x, ymax, self.hoverWidth, \
+                                                                   (ymin-ymax), title)
+
+        return locline + delbars + addbars + hover
+
+
+    def __svgCharEscape(self, char):
+        if re.match('[\d\w\s]', char):
+            return char
+        else:
+            return "&#x%02x;"%(ord(char),)
+
+    def __svgQuoteString(self, string):
+        return ''.join([self.__svgCharEscape(char) for char in string])
+
+    def __writeSvgHeader(self):
+        width = self.__time2x(self.__maxtime)
+        height = self.__loc2y(self.__minloc)+self.paddingBottom
+        header =  """<?xml version="1.0" standalone="no"?>\n"""
+        header += """<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" """\
+                """ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n"""
+        header += """<svg version="1.1" width="%u" height="%u" """ \
+                """ viewBox="0 0 %u %u" xmlns="http://www.w3.org/2000/svg">\n""" % \
+                (width, height, width, height)
+        header += """<style>\nrect.o{opacity:0}\nrect.o:hover{opacity:0.2}\n """ \
+                """.a{fill:none;stroke:black;stroke-width:2}\n</style>\n"""
+        return header
+
+    def __writeSvgTrailer(self):
+        trailer = """</svg>"""
+        return trailer
+
+    def getSvgCode(self):
+        code = svg.__writeSvgHeader()
+        code += svg.__drawGrid()
+        code += svg.__drawCommits()
+        code += svg.__writeSvgTrailer()
+        return code
+
+class ProgRunner:
+  def __init__(self, command, workdir=None):
+    self.command = command
+    self.cwd = workdir
+    self.stdoutfile = tempfile.TemporaryFile()
+    self.stderrfile = tempfile.TemporaryFile()
+    self.proc = subprocess.Popen(self.command, stdout=self.stdoutfile, \
+            stderr=self.stderrfile, cwd=self.cwd)
+
+  def poll(self):
+    return self.proc.poll()
+
+  def getOutput(self):
+    if self.poll() == None or \
+            self.stderrfile.closed or \
+            self.stdoutfile.closed:
+        return None
+    self.stdoutfile.seek(0)
+    self.stderrfile.seek(0)
+    stdout = self.stdoutfile.read()
+    stderr = self.stderrfile.read()
+    self.stdoutfile.close()
+    self.stderrfile.close()
+    return (stdout, stderr)
+
+
+class gitparser:
+    def __init__(self, config):
+        self.__repodir = config.repository
+        self.__list_of_commits = []
+        self.filename_ignore_patterns = config.filename_ignore_patterns
+
+        self.__parseGitLog()
+        self.__parseMergeCommits()
+        self.__sortListOfCommits()
+        self.__calculateLOC()
+
+    def __parseMergeCommits(self):
+        gitcmd = ['git', "--git-dir="+self.__repodir+"/.git", 'log', \
+                '--merges', '--pretty=format:"%h"']
+        list_of_merge_hashes = []
+        for gitlogline in self.__getGitCommandOutput(gitcmd):
+            gitlogline = gitlogline[:-1]
+            list_of_merge_hashes.append(gitlogline)
+        for shorthash in list_of_merge_hashes:
+            self.__parseGitLog(cmd="show", shorthash=shorthash)
+
+    def __getGitCommandOutput(self, gitcmd):
+        p = ProgRunner(command=gitcmd)
+        while(p.poll() == None):
+            continue
+        (out, err) = p.getOutput()
+        return out.split('\n')
+
+    def __parseGitLog(self, cmd="log", shorthash=None):
+        gitcmd = ["git", "--git-dir="+self.__repodir+"/.git"]
+        gitcmd.append(cmd)
+        if shorthash:
+            gitcmd.append(shorthash)
+        gitcmd.extend(['--pretty=format:commit %h %at %s', '--numstat', \
+                '--reverse'])
+
+        shorthash = ""
+        timestamp = ""
+        commitmsg = ""
+        adds = 0
+        dels = 0
+        loc = 0
+
+        commit_in_progress = False
+        for gitlogline in self.__getGitCommandOutput(gitcmd):
+            if re.search("^\s*$", gitlogline): # skip empty line
+                continue
+
+            if re.search("^commit", gitlogline):
+
+                if commit_in_progress and (adds > 0 or dels > 0):
+                    c = commit(shorthash=shorthash, timestamp=timestamp,
+                            adds=adds, dels=dels, loc=loc, commitmsg=commitmsg)
+                    self.__list_of_commits.append(c)
+                    commit_in_progress = False
+
+                # line format:
+                # "commit [shorthash] [timestamp] [commitmsg]"
+                segs = gitlogline.split(' ')
+                if len(segs) < 4:
+                    sys.stderr.write("format error with line '%s'\n" % \
+                            (gitlogline))
+                    commit_in_progress = False
+                    continue
+
+                shorthash = segs[1]
+                timestamp = int(segs[2])
+                commitmsg = " ".join(segs[3:])
+                adds = 0
+                dels = 0
+                commit_in_progress = True
+            else:
+                # line format:
+                # "[adds]    [dels]  [filename]"
+                segs = gitlogline.split('\t')
+                if len(segs) >=3:
+                    agrp = re.search("^([\d-]+)$", segs[0])
+                    dgrp = re.search("^([\d-]+)$", segs[1])
+                    if not agrp and not dgrp:
+                        sys.stderr.write("skipping unknown line: %s\n" % \
+                                (gitlogline))
+                        sys.stderr.write("last commit: %s - %s\n" % \
+                                (shorthash, commitmsg))
+                        continue
+                    filename = segs[2]
+                    ignore = False
+                    for pattern in self.filename_ignore_patterns:
+                        if re.search(pattern, filename):
+                            ignore = True
+                    if ignore:
+                        continue
+
+                    if agrp and agrp.group(0) != "-":
+                        adds += int(agrp.group(0))
+                    if dgrp and dgrp.group(0) != "-":
+                        dels += int(dgrp.group(0))
+                else:
+                    sys.stderr.write("skipping unknown line: %s\n" % (gitlogline))
+                    sys.stderr.write("last commit: %s - %s\n" % \
+                            (shorthash, commitmsg))
+                    commit_in_progress = False
+                    continue
+
+        if commit_in_progress and (adds > 0 or dels > 0):
+            c = commit(shorthash=shorthash, timestamp=timestamp,
+                       adds=adds, dels=dels, loc=loc, commitmsg=commitmsg)
+            self.__list_of_commits.append(c)
+            commit_in_progress = False
+
+    def __sortListOfCommits(self):
+        self.__list_of_commits = sorted(self.__list_of_commits)
+
+    def __calculateLOC(self):
+        loc = 0
+        for commit in self.__list_of_commits:
+            loc = loc + (commit.adds - commit.dels)
+            commit.loc = loc
+
+    def getListOfCommits(self):
+        return self.__list_of_commits
+
+class gitlocsvg_config:
+    filename_ignore_patterns = []
+    commitmsg_ignore_patterns = []
+    repository = None
+
+    svg_color_axis = 'rgb(0,0,0)'
+    svg_color_grid = 'rgb(200,200,200)'
+    svg_color_locline = 'rgb(255,0,0)'
+    svg_color_adds = 'rgb(0,255,0)'
+    svg_color_dels = 'rgb(0,0,255)'
+
+    def __init__(self, repository):
+        if not os.path.isdir(repository):
+            raise OSError
+        self.repository = repository
+        self.__parse_config_files()
+
+    def __get(self, config, section, option, default):
+        if config.has_section(section) and config.has_option(section, option):
+            list = config.get(section, option).splitlines()
+            if len(list) > 1:
+                return list
+            else:
+                return list[0]
+        else:
+            return default
+
+    def __parse_config_files(self):
+        configfiles = [ os.path.join(repository, ".gitlocsvgrc"), \
+                os.path.expanduser('~/.gitlocsvgrc') ]
+        config = ConfigParser.ConfigParser()
+        config.read(configfiles)
+
+        self.svg_color_dels = self.__get(config, 'colors', 'dels', \
+                self.svg_color_dels)
+        self.svg_color_adds = self.__get(config, 'colors', 'adds', \
+                self.svg_color_adds)
+        self.svg_color_locline = self.__get(config, 'colors', 'locline', \
+                self.svg_color_locline)
+        self.svg_color_grid = self.__get(config, 'colors', 'grid', \
+                self.svg_color_grid)
+        self.svg_color_axis = self.__get(config, 'colors', 'axis', \
+                self.svg_color_axis)
+
+        self.filename_ignore_patterns = self.__get(config, 'exclude', 'files', \
+                self.filename_ignore_patterns)
+
+        self.svg_plotrange = int(self.__get(config, 'plotrange', 'weeks', 0))
+        if self.svg_plotrange < 0:
+            raise ValueError("gitlocsvgrc error: invalid plotrange:weeks value: %d" \
+                    % (self.svg_plotrange))
+
+
+
+if __name__=="__main__":
+
+    if len(sys.argv) != 2:
+        print("ERROR: command line argument count mismatch.")
+        print("USAGE: %s [/path/to/git/repository] > graph.svg" % (sys.argv[0]))
+        exit(0)
+
+    repository = sys.argv[1]
+    config = gitlocsvg_config(repository)
+
+    parser = gitparser(config)
+    commits = parser.getListOfCommits()
+
+    draw_commits = []
+    age_limit = datetime.date.today() - \
+            datetime.timedelta(weeks=config.svg_plotrange)
+    for c in commits:
+        if not config.svg_plotrange or \
+                c.timestamp > int(age_limit.strftime("%s")):
+            draw_commits.append(c)
+
+    svg = svgwriter(draw_commits, width=1000, height=500,
+            config=config)
+    print svg.getSvgCode()

@@ -1,0 +1,415 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="1080" height="620"  viewBox="0 0 1080 620" xmlns="http://www.w3.org/2000/svg">
+<style>
+rect.o{opacity:0}
+rect.o:hover{opacity:0.2}
+ .a{fill:none;stroke:black;stroke-width:2}
+</style>
+<polyline points="191,0 191,500" style="stroke:rgb(199, 200, 200)" />
+<polyline points="302,0 302,500" style="stroke:rgb(199, 200, 200)" />
+<polyline points="413,0 413,500" style="stroke:rgb(199, 200, 200)" />
+<polyline points="524,0 524,500" style="stroke:rgb(199, 200, 200)" />
+<polyline points="635,0 635,500" style="stroke:rgb(199, 200, 200)" />
+<polyline points="746,0 746,500" style="stroke:rgb(199, 200, 200)" />
+<polyline points="857,0 857,500" style="stroke:rgb(199, 200, 200)" />
+<polyline points="968,0 968,500" style="stroke:rgb(199, 200, 200)" />
+<polyline points="1080,0 1080,500" style="stroke:rgb(199, 200, 200)" />
+<polyline points="80,500 1080,500" style="stroke:rgb(199, 200, 200)" />
+<polyline points="80,429 1080,429" style="stroke:rgb(199, 200, 200)" />
+<polyline points="80,358 1080,358" style="stroke:rgb(199, 200, 200)" />
+<polyline points="80,286 1080,286" style="stroke:rgb(199, 200, 200)" />
+<polyline points="80,215 1080,215" style="stroke:rgb(199, 200, 200)" />
+<polyline points="80,143 1080,143" style="stroke:rgb(199, 200, 200)" />
+<polyline points="80,72 1080,72" style="stroke:rgb(199, 200, 200)" />
+<polyline points="70,500 1080,500" style="stroke:rgb(0, 0, 0)" />
+<polyline points="80,510 80,0" style="stroke:rgb(0, 0, 0)" />
+<text x="191" y="505" text-anchor="end"  transform="rotate(-90,191,505)">Mon 16.10.17</text>
+<text x="302" y="505" text-anchor="end"  transform="rotate(-90,302,505)">Mon 23.10.17</text>
+<text x="413" y="505" text-anchor="end"  transform="rotate(-90,413,505)">Mon 30.10.17</text>
+<text x="524" y="505" text-anchor="end"  transform="rotate(-90,524,505)">Mon 06.11.17</text>
+<text x="635" y="505" text-anchor="end"  transform="rotate(-90,635,505)">Mon 13.11.17</text>
+<text x="746" y="505" text-anchor="end"  transform="rotate(-90,746,505)">Mon 20.11.17</text>
+<text x="857" y="505" text-anchor="end"  transform="rotate(-90,857,505)">Mon 27.11.17</text>
+<text x="968" y="505" text-anchor="end"  transform="rotate(-90,968,505)">Mon 04.12.17</text>
+<text x="1080" y="505" text-anchor="end"  transform="rotate(-90,1080,505)">Mon 11.12.17</text>
+<text x="75" y="500" text-anchor="end"> -5k</text>
+<text x="75" y="429" text-anchor="end">  0</text>
+<text x="75" y="358" text-anchor="end">  5k</text>
+<text x="75" y="286" text-anchor="end"> 10k</text>
+<text x="75" y="215" text-anchor="end"> 15k</text>
+<text x="75" y="143" text-anchor="end"> 20k</text>
+<text x="75" y="72" text-anchor="end"> 25k</text>
+<polyline points="151,332 151,332 154,332 154,334 155,334 155,334 157,334 157,334 168,334 168,333 174,333 174,333 214,333 214,333 218,333 218,332 220,332 220,331 222,331 222,331 229,331 229,331 231,331 231,331 234,331 234,331 236,331 236,331 249,331 249,324 265,324 265,320 269,320 269,320 292,320 292,188 293,188 293,188 294,188 294,188 296,188 296,188 297,188 297,188 298,188 298,188 300,188 300,188 313,188 313,187 317,187 317,187 325,187 325,187 327,187 327,187 332,187 332,187 344,187 344,187 345,187 345,187 348,187 348,187 356,187 356,187 380,187 380,186 381,186 381,186 389,186 389,186 395,186 395,185 420,185 420,185 421,185 421,185 425,185 425,184 454,184 454,184 468,184 468,183 472,183 472,183 483,183 483,183 484,183 484,183 501,183 501,182 505,182 505,182 509,182 509,182 514,182 514,182 516,182 516,182 521,182 521,182 524,182 524,182 538,182 538,181 548,181 548,181 549,181 549,180 554,180 554,180 564,180 564,180 565,180 565,180 580,180 580,180 581,180 581,180 584,180 584,180 585,180 585,180 594,180 594,179 595,179 595,179 598,179 598,179 599,179 599,179 603,179 603,179 609,179 609,179 614,179 614,179 617,179 617,179 627,179 627,179 628,179 628,179 632,179 632,178 635,178 635,178 637,178 637,176 644,176 644,176 646,176 646,176 647,176 647,176 651,176 651,177 652,177 652,177 659,177 659,177 660,177 660,177 662,177 662,177 675,177 675,176 677,176 677,176 682,176 682,176 684,176 684,177 686,177 686,176 689,176 689,176 694,176 694,176 695,176 695,176 696,176 696,175 706,175 706,176 707,176 707,176 718,176 718,178 725,178 725,178 726,178 726,178 728,178 728,178 729,178 729,170 732,170 732,170 744,170 744,170 749,170 749,170 750,170 750,172 758,172 758,172 761,172 761,172 762,172 762,172 764,172 764,172 767,172 767,172 775,172 775,289 776,289 776,292 777,292 777,292 778,292 778,292 779,292 779,292 794,292 794,292 795,292 795,292 799,292 799,291 802,291 802,282 804,282 804,280 805,280 805,280 809,280 809,279 810,279 810,279 813,279 813,279 815,279 815,299 821,299 821,300 822,300 822,300 825,300 825,300 832,300 832,300 836,300 836,300 838,300 838,293 841,293 841,291 843,291 843,291 847,291 847,291 855,291 855,291 861,291 861,291 870,291 870,292 871,292 871,292 874,292 874,292 883,292 883,292 886,292 886,293 887,293 887,293 888,293 888,293 890,293 890,291 899,291 899,291 900,291 900,291 914,291 914,291 933,291 933,291 936,291 936,291 937,291 937,291 938,291 938,291 951,291 951,291 952,291 952,291 953,291 953,291 981,291 981,291" class="a" style="stroke:rgb(255, 0, 0)"/>
+<polyline points="151,332 151,332" style="stroke:rgb(0, 0, 255)" />
+<polyline points="154,334 154,337" style="stroke:rgb(0, 0, 255)" />
+<polyline points="155,334 155,334" style="stroke:rgb(0, 0, 255)" />
+<polyline points="157,334 157,335" style="stroke:rgb(0, 0, 255)" />
+<polyline points="168,333 168,334" style="stroke:rgb(0, 0, 255)" />
+<polyline points="174,333 174,333" style="stroke:rgb(0, 0, 255)" />
+<polyline points="214,333 214,333" style="stroke:rgb(0, 0, 255)" />
+<polyline points="218,332 218,332" style="stroke:rgb(0, 0, 255)" />
+<polyline points="220,331 220,331" style="stroke:rgb(0, 0, 255)" />
+<polyline points="222,331 222,331" style="stroke:rgb(0, 0, 255)" />
+<polyline points="229,331 229,331" style="stroke:rgb(0, 0, 255)" />
+<polyline points="231,331 231,331" style="stroke:rgb(0, 0, 255)" />
+<polyline points="234,331 234,331" style="stroke:rgb(0, 0, 255)" />
+<polyline points="236,331 236,331" style="stroke:rgb(0, 0, 255)" />
+<polyline points="249,324 249,325" style="stroke:rgb(0, 0, 255)" />
+<polyline points="265,320 265,320" style="stroke:rgb(0, 0, 255)" />
+<polyline points="269,320 269,320" style="stroke:rgb(0, 0, 255)" />
+<polyline points="292,188 292,189" style="stroke:rgb(0, 0, 255)" />
+<polyline points="293,188 293,188" style="stroke:rgb(0, 0, 255)" />
+<polyline points="294,188 294,194" style="stroke:rgb(0, 0, 255)" />
+<polyline points="296,188 296,188" style="stroke:rgb(0, 0, 255)" />
+<polyline points="297,188 297,188" style="stroke:rgb(0, 0, 255)" />
+<polyline points="298,188 298,188" style="stroke:rgb(0, 0, 255)" />
+<polyline points="300,188 300,188" style="stroke:rgb(0, 0, 255)" />
+<polyline points="313,187 313,187" style="stroke:rgb(0, 0, 255)" />
+<polyline points="317,187 317,193" style="stroke:rgb(0, 0, 255)" />
+<polyline points="325,187 325,187" style="stroke:rgb(0, 0, 255)" />
+<polyline points="327,187 327,187" style="stroke:rgb(0, 0, 255)" />
+<polyline points="332,187 332,187" style="stroke:rgb(0, 0, 255)" />
+<polyline points="344,187 344,188" style="stroke:rgb(0, 0, 255)" />
+<polyline points="345,187 345,187" style="stroke:rgb(0, 0, 255)" />
+<polyline points="348,187 348,187" style="stroke:rgb(0, 0, 255)" />
+<polyline points="356,187 356,187" style="stroke:rgb(0, 0, 255)" />
+<polyline points="380,186 380,186" style="stroke:rgb(0, 0, 255)" />
+<polyline points="381,186 381,186" style="stroke:rgb(0, 0, 255)" />
+<polyline points="389,186 389,186" style="stroke:rgb(0, 0, 255)" />
+<polyline points="395,185 395,185" style="stroke:rgb(0, 0, 255)" />
+<polyline points="420,185 420,186" style="stroke:rgb(0, 0, 255)" />
+<polyline points="421,185 421,185" style="stroke:rgb(0, 0, 255)" />
+<polyline points="425,184 425,184" style="stroke:rgb(0, 0, 255)" />
+<polyline points="454,184 454,184" style="stroke:rgb(0, 0, 255)" />
+<polyline points="468,183 468,183" style="stroke:rgb(0, 0, 255)" />
+<polyline points="472,183 472,183" style="stroke:rgb(0, 0, 255)" />
+<polyline points="483,183 483,183" style="stroke:rgb(0, 0, 255)" />
+<polyline points="484,183 484,183" style="stroke:rgb(0, 0, 255)" />
+<polyline points="501,182 501,183" style="stroke:rgb(0, 0, 255)" />
+<polyline points="505,182 505,182" style="stroke:rgb(0, 0, 255)" />
+<polyline points="509,182 509,182" style="stroke:rgb(0, 0, 255)" />
+<polyline points="514,182 514,182" style="stroke:rgb(0, 0, 255)" />
+<polyline points="516,182 516,184" style="stroke:rgb(0, 0, 255)" />
+<polyline points="521,182 521,182" style="stroke:rgb(0, 0, 255)" />
+<polyline points="524,182 524,182" style="stroke:rgb(0, 0, 255)" />
+<polyline points="538,181 538,182" style="stroke:rgb(0, 0, 255)" />
+<polyline points="548,181 548,181" style="stroke:rgb(0, 0, 255)" />
+<polyline points="549,180 549,187" style="stroke:rgb(0, 0, 255)" />
+<polyline points="554,180 554,181" style="stroke:rgb(0, 0, 255)" />
+<polyline points="564,180 564,180" style="stroke:rgb(0, 0, 255)" />
+<polyline points="565,180 565,180" style="stroke:rgb(0, 0, 255)" />
+<polyline points="580,180 580,180" style="stroke:rgb(0, 0, 255)" />
+<polyline points="581,180 581,180" style="stroke:rgb(0, 0, 255)" />
+<polyline points="584,180 584,180" style="stroke:rgb(0, 0, 255)" />
+<polyline points="585,180 585,180" style="stroke:rgb(0, 0, 255)" />
+<polyline points="594,179 594,187" style="stroke:rgb(0, 0, 255)" />
+<polyline points="595,179 595,184" style="stroke:rgb(0, 0, 255)" />
+<polyline points="598,179 598,179" style="stroke:rgb(0, 0, 255)" />
+<polyline points="599,179 599,179" style="stroke:rgb(0, 0, 255)" />
+<polyline points="603,179 603,179" style="stroke:rgb(0, 0, 255)" />
+<polyline points="609,179 609,184" style="stroke:rgb(0, 0, 255)" />
+<polyline points="614,179 614,179" style="stroke:rgb(0, 0, 255)" />
+<polyline points="617,179 617,180" style="stroke:rgb(0, 0, 255)" />
+<polyline points="627,179 627,179" style="stroke:rgb(0, 0, 255)" />
+<polyline points="628,179 628,179" style="stroke:rgb(0, 0, 255)" />
+<polyline points="632,178 632,187" style="stroke:rgb(0, 0, 255)" />
+<polyline points="635,178 635,187" style="stroke:rgb(0, 0, 255)" />
+<polyline points="637,176 637,182" style="stroke:rgb(0, 0, 255)" />
+<polyline points="644,176 644,176" style="stroke:rgb(0, 0, 255)" />
+<polyline points="646,176 646,176" style="stroke:rgb(0, 0, 255)" />
+<polyline points="647,176 647,176" style="stroke:rgb(0, 0, 255)" />
+<polyline points="651,177 651,177" style="stroke:rgb(0, 0, 255)" />
+<polyline points="652,177 652,177" style="stroke:rgb(0, 0, 255)" />
+<polyline points="659,177 659,177" style="stroke:rgb(0, 0, 255)" />
+<polyline points="660,177 660,177" style="stroke:rgb(0, 0, 255)" />
+<polyline points="662,177 662,177" style="stroke:rgb(0, 0, 255)" />
+<polyline points="675,176 675,176" style="stroke:rgb(0, 0, 255)" />
+<polyline points="677,176 677,177" style="stroke:rgb(0, 0, 255)" />
+<polyline points="682,176 682,177" style="stroke:rgb(0, 0, 255)" />
+<polyline points="684,177 684,177" style="stroke:rgb(0, 0, 255)" />
+<polyline points="686,176 686,177" style="stroke:rgb(0, 0, 255)" />
+<polyline points="689,176 689,176" style="stroke:rgb(0, 0, 255)" />
+<polyline points="694,176 694,176" style="stroke:rgb(0, 0, 255)" />
+<polyline points="695,176 695,185" style="stroke:rgb(0, 0, 255)" />
+<polyline points="696,175 696,177" style="stroke:rgb(0, 0, 255)" />
+<polyline points="706,176 706,185" style="stroke:rgb(0, 0, 255)" />
+<polyline points="707,176 707,176" style="stroke:rgb(0, 0, 255)" />
+<polyline points="718,178 718,186" style="stroke:rgb(0, 0, 255)" />
+<polyline points="725,178 725,178" style="stroke:rgb(0, 0, 255)" />
+<polyline points="726,178 726,178" style="stroke:rgb(0, 0, 255)" />
+<polyline points="728,178 728,178" style="stroke:rgb(0, 0, 255)" />
+<polyline points="729,170 729,177" style="stroke:rgb(0, 0, 255)" />
+<polyline points="732,170 732,171" style="stroke:rgb(0, 0, 255)" />
+<polyline points="744,170 744,170" style="stroke:rgb(0, 0, 255)" />
+<polyline points="749,170 749,170" style="stroke:rgb(0, 0, 255)" />
+<polyline points="750,172 750,181" style="stroke:rgb(0, 0, 255)" />
+<polyline points="758,172 758,179" style="stroke:rgb(0, 0, 255)" />
+<polyline points="761,172 761,180" style="stroke:rgb(0, 0, 255)" />
+<polyline points="762,172 762,172" style="stroke:rgb(0, 0, 255)" />
+<polyline points="764,172 764,172" style="stroke:rgb(0, 0, 255)" />
+<polyline points="767,172 767,172" style="stroke:rgb(0, 0, 255)" />
+<polyline points="775,289 775,429" style="stroke:rgb(0, 0, 255)" />
+<polyline points="776,292 776,295" style="stroke:rgb(0, 0, 255)" />
+<polyline points="777,292 777,292" style="stroke:rgb(0, 0, 255)" />
+<polyline points="778,292 778,292" style="stroke:rgb(0, 0, 255)" />
+<polyline points="779,292 779,292" style="stroke:rgb(0, 0, 255)" />
+<polyline points="794,292 794,292" style="stroke:rgb(0, 0, 255)" />
+<polyline points="795,292 795,292" style="stroke:rgb(0, 0, 255)" />
+<polyline points="799,291 799,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="802,282 802,287" style="stroke:rgb(0, 0, 255)" />
+<polyline points="804,280 804,284" style="stroke:rgb(0, 0, 255)" />
+<polyline points="805,280 805,281" style="stroke:rgb(0, 0, 255)" />
+<polyline points="809,279 809,280" style="stroke:rgb(0, 0, 255)" />
+<polyline points="810,279 810,280" style="stroke:rgb(0, 0, 255)" />
+<polyline points="813,279 813,279" style="stroke:rgb(0, 0, 255)" />
+<polyline points="815,299 815,321" style="stroke:rgb(0, 0, 255)" />
+<polyline points="821,300 821,302" style="stroke:rgb(0, 0, 255)" />
+<polyline points="822,300 822,300" style="stroke:rgb(0, 0, 255)" />
+<polyline points="825,300 825,300" style="stroke:rgb(0, 0, 255)" />
+<polyline points="832,300 832,300" style="stroke:rgb(0, 0, 255)" />
+<polyline points="836,300 836,300" style="stroke:rgb(0, 0, 255)" />
+<polyline points="838,293 838,294" style="stroke:rgb(0, 0, 255)" />
+<polyline points="841,291 841,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="843,291 843,292" style="stroke:rgb(0, 0, 255)" />
+<polyline points="847,291 847,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="855,291 855,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="861,291 861,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="870,292 870,300" style="stroke:rgb(0, 0, 255)" />
+<polyline points="871,292 871,292" style="stroke:rgb(0, 0, 255)" />
+<polyline points="874,292 874,292" style="stroke:rgb(0, 0, 255)" />
+<polyline points="883,292 883,293" style="stroke:rgb(0, 0, 255)" />
+<polyline points="886,293 886,298" style="stroke:rgb(0, 0, 255)" />
+<polyline points="887,293 887,293" style="stroke:rgb(0, 0, 255)" />
+<polyline points="888,293 888,293" style="stroke:rgb(0, 0, 255)" />
+<polyline points="890,291 890,293" style="stroke:rgb(0, 0, 255)" />
+<polyline points="899,291 899,293" style="stroke:rgb(0, 0, 255)" />
+<polyline points="900,291 900,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="914,291 914,293" style="stroke:rgb(0, 0, 255)" />
+<polyline points="933,291 933,292" style="stroke:rgb(0, 0, 255)" />
+<polyline points="936,291 936,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="937,291 937,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="938,291 938,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="951,291 951,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="952,291 952,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="953,291 953,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="981,291 981,291" style="stroke:rgb(0, 0, 255)" />
+<polyline points="151,332 151,325" style="stroke:rgb(0,255,0)" />
+<polyline points="154,334 154,333" style="stroke:rgb(0,255,0)" />
+<polyline points="155,334 155,334" style="stroke:rgb(0,255,0)" />
+<polyline points="157,334 157,334" style="stroke:rgb(0,255,0)" />
+<polyline points="168,333 168,333" style="stroke:rgb(0,255,0)" />
+<polyline points="174,333 174,333" style="stroke:rgb(0,255,0)" />
+<polyline points="214,333 214,333" style="stroke:rgb(0,255,0)" />
+<polyline points="218,332 218,330" style="stroke:rgb(0,255,0)" />
+<polyline points="220,331 220,330" style="stroke:rgb(0,255,0)" />
+<polyline points="222,331 222,331" style="stroke:rgb(0,255,0)" />
+<polyline points="229,331 229,330" style="stroke:rgb(0,255,0)" />
+<polyline points="231,331 231,331" style="stroke:rgb(0,255,0)" />
+<polyline points="234,331 234,331" style="stroke:rgb(0,255,0)" />
+<polyline points="236,331 236,331" style="stroke:rgb(0,255,0)" />
+<polyline points="249,324 249,317" style="stroke:rgb(0,255,0)" />
+<polyline points="265,320 265,315" style="stroke:rgb(0,255,0)" />
+<polyline points="269,320 269,320" style="stroke:rgb(0,255,0)" />
+<polyline points="292,188 292,56" style="stroke:rgb(0,255,0)" />
+<polyline points="293,188 293,188" style="stroke:rgb(0,255,0)" />
+<polyline points="294,188 294,181" style="stroke:rgb(0,255,0)" />
+<polyline points="296,188 296,188" style="stroke:rgb(0,255,0)" />
+<polyline points="297,188 297,188" style="stroke:rgb(0,255,0)" />
+<polyline points="298,188 298,187" style="stroke:rgb(0,255,0)" />
+<polyline points="300,188 300,188" style="stroke:rgb(0,255,0)" />
+<polyline points="313,187 313,186" style="stroke:rgb(0,255,0)" />
+<polyline points="317,187 317,181" style="stroke:rgb(0,255,0)" />
+<polyline points="325,187 325,187" style="stroke:rgb(0,255,0)" />
+<polyline points="327,187 327,187" style="stroke:rgb(0,255,0)" />
+<polyline points="332,187 332,187" style="stroke:rgb(0,255,0)" />
+<polyline points="344,187 344,187" style="stroke:rgb(0,255,0)" />
+<polyline points="345,187 345,187" style="stroke:rgb(0,255,0)" />
+<polyline points="348,187 348,187" style="stroke:rgb(0,255,0)" />
+<polyline points="356,187 356,187" style="stroke:rgb(0,255,0)" />
+<polyline points="380,186 380,184" style="stroke:rgb(0,255,0)" />
+<polyline points="381,186 381,186" style="stroke:rgb(0,255,0)" />
+<polyline points="389,186 389,185" style="stroke:rgb(0,255,0)" />
+<polyline points="395,185 395,185" style="stroke:rgb(0,255,0)" />
+<polyline points="420,185 420,183" style="stroke:rgb(0,255,0)" />
+<polyline points="421,185 421,185" style="stroke:rgb(0,255,0)" />
+<polyline points="425,184 425,184" style="stroke:rgb(0,255,0)" />
+<polyline points="454,184 454,184" style="stroke:rgb(0,255,0)" />
+<polyline points="468,183 468,181" style="stroke:rgb(0,255,0)" />
+<polyline points="472,183 472,182" style="stroke:rgb(0,255,0)" />
+<polyline points="483,183 483,183" style="stroke:rgb(0,255,0)" />
+<polyline points="484,183 484,183" style="stroke:rgb(0,255,0)" />
+<polyline points="501,182 501,180" style="stroke:rgb(0,255,0)" />
+<polyline points="505,182 505,182" style="stroke:rgb(0,255,0)" />
+<polyline points="509,182 509,182" style="stroke:rgb(0,255,0)" />
+<polyline points="514,182 514,182" style="stroke:rgb(0,255,0)" />
+<polyline points="516,182 516,180" style="stroke:rgb(0,255,0)" />
+<polyline points="521,182 521,182" style="stroke:rgb(0,255,0)" />
+<polyline points="524,182 524,182" style="stroke:rgb(0,255,0)" />
+<polyline points="538,181 538,180" style="stroke:rgb(0,255,0)" />
+<polyline points="548,181 548,181" style="stroke:rgb(0,255,0)" />
+<polyline points="549,180 549,173" style="stroke:rgb(0,255,0)" />
+<polyline points="554,180 554,179" style="stroke:rgb(0,255,0)" />
+<polyline points="564,180 564,180" style="stroke:rgb(0,255,0)" />
+<polyline points="565,180 565,180" style="stroke:rgb(0,255,0)" />
+<polyline points="580,180 580,180" style="stroke:rgb(0,255,0)" />
+<polyline points="581,180 581,180" style="stroke:rgb(0,255,0)" />
+<polyline points="584,180 584,180" style="stroke:rgb(0,255,0)" />
+<polyline points="585,180 585,180" style="stroke:rgb(0,255,0)" />
+<polyline points="594,179 594,170" style="stroke:rgb(0,255,0)" />
+<polyline points="595,179 595,175" style="stroke:rgb(0,255,0)" />
+<polyline points="598,179 598,179" style="stroke:rgb(0,255,0)" />
+<polyline points="599,179 599,179" style="stroke:rgb(0,255,0)" />
+<polyline points="603,179 603,179" style="stroke:rgb(0,255,0)" />
+<polyline points="609,179 609,175" style="stroke:rgb(0,255,0)" />
+<polyline points="614,179 614,179" style="stroke:rgb(0,255,0)" />
+<polyline points="617,179 617,178" style="stroke:rgb(0,255,0)" />
+<polyline points="627,179 627,178" style="stroke:rgb(0,255,0)" />
+<polyline points="628,179 628,179" style="stroke:rgb(0,255,0)" />
+<polyline points="632,178 632,169" style="stroke:rgb(0,255,0)" />
+<polyline points="635,178 635,169" style="stroke:rgb(0,255,0)" />
+<polyline points="637,176 637,169" style="stroke:rgb(0,255,0)" />
+<polyline points="644,176 644,176" style="stroke:rgb(0,255,0)" />
+<polyline points="646,176 646,176" style="stroke:rgb(0,255,0)" />
+<polyline points="647,176 647,176" style="stroke:rgb(0,255,0)" />
+<polyline points="651,177 651,177" style="stroke:rgb(0,255,0)" />
+<polyline points="652,177 652,176" style="stroke:rgb(0,255,0)" />
+<polyline points="659,177 659,177" style="stroke:rgb(0,255,0)" />
+<polyline points="660,177 660,177" style="stroke:rgb(0,255,0)" />
+<polyline points="662,177 662,176" style="stroke:rgb(0,255,0)" />
+<polyline points="675,176 675,176" style="stroke:rgb(0,255,0)" />
+<polyline points="677,176 677,176" style="stroke:rgb(0,255,0)" />
+<polyline points="682,176 682,176" style="stroke:rgb(0,255,0)" />
+<polyline points="684,177 684,177" style="stroke:rgb(0,255,0)" />
+<polyline points="686,176 686,175" style="stroke:rgb(0,255,0)" />
+<polyline points="689,176 689,176" style="stroke:rgb(0,255,0)" />
+<polyline points="694,176 694,176" style="stroke:rgb(0,255,0)" />
+<polyline points="695,176 695,166" style="stroke:rgb(0,255,0)" />
+<polyline points="696,175 696,174" style="stroke:rgb(0,255,0)" />
+<polyline points="706,176 706,166" style="stroke:rgb(0,255,0)" />
+<polyline points="707,176 707,176" style="stroke:rgb(0,255,0)" />
+<polyline points="718,178 718,173" style="stroke:rgb(0,255,0)" />
+<polyline points="725,178 725,178" style="stroke:rgb(0,255,0)" />
+<polyline points="726,178 726,178" style="stroke:rgb(0,255,0)" />
+<polyline points="728,178 728,178" style="stroke:rgb(0,255,0)" />
+<polyline points="729,170 729,156" style="stroke:rgb(0,255,0)" />
+<polyline points="732,170 732,170" style="stroke:rgb(0,255,0)" />
+<polyline points="744,170 744,170" style="stroke:rgb(0,255,0)" />
+<polyline points="749,170 749,170" style="stroke:rgb(0,255,0)" />
+<polyline points="750,172 750,166" style="stroke:rgb(0,255,0)" />
+<polyline points="758,172 758,164" style="stroke:rgb(0,255,0)" />
+<polyline points="761,172 761,164" style="stroke:rgb(0,255,0)" />
+<polyline points="762,172 762,172" style="stroke:rgb(0,255,0)" />
+<polyline points="764,172 764,172" style="stroke:rgb(0,255,0)" />
+<polyline points="767,172 767,172" style="stroke:rgb(0,255,0)" />
+<polyline points="775,289 775,268" style="stroke:rgb(0,255,0)" />
+<polyline points="776,292 776,292" style="stroke:rgb(0,255,0)" />
+<polyline points="777,292 777,290" style="stroke:rgb(0,255,0)" />
+<polyline points="778,292 778,291" style="stroke:rgb(0,255,0)" />
+<polyline points="779,292 779,291" style="stroke:rgb(0,255,0)" />
+<polyline points="794,292 794,292" style="stroke:rgb(0,255,0)" />
+<polyline points="795,292 795,292" style="stroke:rgb(0,255,0)" />
+<polyline points="799,291 799,290" style="stroke:rgb(0,255,0)" />
+<polyline points="802,282 802,267" style="stroke:rgb(0,255,0)" />
+<polyline points="804,280 804,275" style="stroke:rgb(0,255,0)" />
+<polyline points="805,280 805,279" style="stroke:rgb(0,255,0)" />
+<polyline points="809,279 809,278" style="stroke:rgb(0,255,0)" />
+<polyline points="810,279 810,279" style="stroke:rgb(0,255,0)" />
+<polyline points="813,279 813,278" style="stroke:rgb(0,255,0)" />
+<polyline points="815,299 815,298" style="stroke:rgb(0,255,0)" />
+<polyline points="821,300 821,300" style="stroke:rgb(0,255,0)" />
+<polyline points="822,300 822,300" style="stroke:rgb(0,255,0)" />
+<polyline points="825,300 825,300" style="stroke:rgb(0,255,0)" />
+<polyline points="832,300 832,300" style="stroke:rgb(0,255,0)" />
+<polyline points="836,300 836,300" style="stroke:rgb(0,255,0)" />
+<polyline points="838,293 838,284" style="stroke:rgb(0,255,0)" />
+<polyline points="841,291 841,290" style="stroke:rgb(0,255,0)" />
+<polyline points="843,291 843,290" style="stroke:rgb(0,255,0)" />
+<polyline points="847,291 847,291" style="stroke:rgb(0,255,0)" />
+<polyline points="855,291 855,291" style="stroke:rgb(0,255,0)" />
+<polyline points="861,291 861,291" style="stroke:rgb(0,255,0)" />
+<polyline points="870,292 870,286" style="stroke:rgb(0,255,0)" />
+<polyline points="871,292 871,292" style="stroke:rgb(0,255,0)" />
+<polyline points="874,292 874,292" style="stroke:rgb(0,255,0)" />
+<polyline points="883,292 883,291" style="stroke:rgb(0,255,0)" />
+<polyline points="886,293 886,289" style="stroke:rgb(0,255,0)" />
+<polyline points="887,293 887,292" style="stroke:rgb(0,255,0)" />
+<polyline points="888,293 888,293" style="stroke:rgb(0,255,0)" />
+<polyline points="890,291 890,289" style="stroke:rgb(0,255,0)" />
+<polyline points="899,291 899,290" style="stroke:rgb(0,255,0)" />
+<polyline points="900,291 900,291" style="stroke:rgb(0,255,0)" />
+<polyline points="914,291 914,290" style="stroke:rgb(0,255,0)" />
+<polyline points="933,291 933,290" style="stroke:rgb(0,255,0)" />
+<polyline points="936,291 936,291" style="stroke:rgb(0,255,0)" />
+<polyline points="937,291 937,290" style="stroke:rgb(0,255,0)" />
+<polyline points="938,291 938,290" style="stroke:rgb(0,255,0)" />
+<polyline points="951,291 951,291" style="stroke:rgb(0,255,0)" />
+<polyline points="952,291 952,291" style="stroke:rgb(0,255,0)" />
+<polyline points="953,291 953,291" style="stroke:rgb(0,255,0)" />
+<polyline points="981,291 981,291" style="stroke:rgb(0,255,0)" />
+<rect x="150" y="0" width="10" height="500"  class="o"><title>6648 Lines of code, 598 adds, 304 dels&#013;&#010;[1bed1aa] Initial commit&#13;&#010;[db125ef] first setup in progress&#13;&#010;[eb41fb0] first setup in progress&#13;&#010;[57ad2a8] moved env vars in package &#x2d; removed required JWT_S&#x2e;&#x2e;&#x2e;&#13;&#010;[065d7b7] testing&#13;&#010;...and 6 more.</title></rect>
+<rect x="160" y="0" width="10" height="500"  class="o"><title>6692 Lines of code, 55 adds, 11 dels&#013;&#010;[e7b79a6] new sorters &#x2d; verification process &#x2d; bug fixing&#13;&#010;</title></rect>
+<rect x="170" y="0" width="10" height="500"  class="o"><title>6709 Lines of code, 25 adds, 8 dels&#013;&#010;[dc7a27d] added more browsing filters for posts&#13;&#010;[7dc730b] backward compatibility for type&#13;&#010;</title></rect>
+<rect x="210" y="0" width="10" height="500"  class="o"><title>6804 Lines of code, 109 adds, 14 dels&#013;&#010;[f18e32b] always force existing type&#13;&#010;[079d676] working on sponsors &#x2d; changed ndoe&#13;&#010;</title></rect>
+<rect x="220" y="0" width="10" height="500"  class="o"><title>6891 Lines of code, 121 adds, 34 dels&#013;&#010;[34fdae9] added sponsors&#13;&#010;[a93cc1c] added scripts to package&#13;&#010;[e45b0d7] forcing repository &#x2d; chaning sorting of homepage&#13;&#010;[2523f59] revert homepage ordering&#13;&#010;[902e277] readded count of all posts&#13;&#010;</title></rect>
+<rect x="230" y="0" width="10" height="500"  class="o"><title>6895 Lines of code, 9 adds, 5 dels&#013;&#010;[dd2d0c6] changed home sorting&#13;&#010;[e93d6be] fixing error with sponsorhip&#13;&#010;[e3b7fee] hardfix&#13;&#010;[578ad74] model json meta not required&#13;&#010;</title></rect>
+<rect x="240" y="0" width="10" height="500"  class="o"><title>7351 Lines of code, 498 adds, 42 dels&#013;&#010;[5934dc0] sponsors transparency and shares&#13;&#010;</title></rect>
+<rect x="260" y="0" width="10" height="500"  class="o"><title>7652 Lines of code, 335 adds, 34 dels&#013;&#010;[3d09231] added moderators in beneficiaries&#13;&#010;[fdb15fa] entering moderators in the list immediately&#13;&#010;</title></rect>
+<rect x="290" y="0" width="10" height="500"  class="o"><title>16908 Lines of code, 9750 adds, 494 dels&#013;&#010;[f963acd] Meritocratic Utopian Bot&#13;&#010;[2d6009b] removed husky&#13;&#010;[5070379] fix count query per author&#13;&#010;[655119e] fixed body length&#13;&#010;[a15e4bc] gift for many achievements&#13;&#010;...and 10 more.</title></rect>
+<rect x="300" y="0" width="10" height="500"  class="o"><title>16897 Lines of code, 0 adds, 11 dels&#013;&#010;[b3717c4] removed total_paid_sponsors&#13;&#010;</title></rect>
+<rect x="310" y="0" width="10" height="500"  class="o"><title>16947 Lines of code, 488 adds, 438 dels&#013;&#010;[de4b465] added moderations features&#13;&#010;[bbcf238] check power from blockchain&#13;&#010;</title></rect>
+<rect x="320" y="0" width="10" height="500"  class="o"><title>16947 Lines of code, 10 adds, 10 dels&#013;&#010;[110a91b] moderators should still see pending reviews in the&#x2e;&#x2e;&#x2e;&#13;&#010;[f45ec87] fixed moderation statuses&#13;&#010;</title></rect>
+<rect x="330" y="0" width="10" height="500"  class="o"><title>16953 Lines of code, 6 adds, 0 dels&#013;&#010;[92d6e98] plus 15&#x25; for dev category&#13;&#010;</title></rect>
+<rect x="340" y="0" width="10" height="500"  class="o"><title>16920 Lines of code, 35 adds, 68 dels&#013;&#010;[d403442] done&#13;&#010;[f843815] utopian bot sleep more&#13;&#010;[7d5256c] moved to 60 as bear min bot voting power&#13;&#010;</title></rect>
+<rect x="350" y="0" width="10" height="500"  class="o"><title>16929 Lines of code, 15 adds, 6 dels&#013;&#010;[92ea969] added bySimilarity&#13;&#010;</title></rect>
+<rect x="380" y="0" width="10" height="500"  class="o"><title>17033 Lines of code, 135 adds, 31 dels&#013;&#010;[fdbda1c] added github integration and announcements&#13;&#010;[770652c] votes minus or equak 0 should give 1&#13;&#010;[ea40358] Update utopian&#x2d;bot&#x2e;js&#13;&#010;[0192feb] adding stats for announcements&#13;&#010;</title></rect>
+<rect x="390" y="0" width="10" height="500"  class="o"><title>17052 Lines of code, 19 adds, 0 dels&#013;&#010;[09719d7] Update utopian&#x2d;bot&#x2e;js&#13;&#010;</title></rect>
+<rect x="420" y="0" width="10" height="500"  class="o"><title>17138 Lines of code, 153 adds, 67 dels&#013;&#010;[d40ec8e] changed bot weights&#13;&#010;[b8f4de4] Removing some bots for awhile&#x2e;&#13;&#010;[480f19c] added github feed integration&#13;&#010;</title></rect>
+<rect x="450" y="0" width="10" height="500"  class="o"><title>17138 Lines of code, 2 adds, 2 dels&#013;&#010;[225673d] Fixed typo in console&#x2e;log sentences&#13;&#010;</title></rect>
+<rect x="460" y="0" width="10" height="500"  class="o"><title>17227 Lines of code, 119 adds, 30 dels&#013;&#010;[1a82e44] in progress&#13;&#010;[1b07825] stop ideas to github &#x2d; hard fix&#13;&#010;</title></rect>
+<rect x="470" y="0" width="10" height="500"  class="o"><title>17237 Lines of code, 53 adds, 43 dels&#013;&#010;[e98c235] fixed stats&#13;&#010;[0b1c8b7] localhost&#13;&#010;</title></rect>
+<rect x="480" y="0" width="10" height="500"  class="o"><title>17245 Lines of code, 11 adds, 3 dels&#013;&#010;[7d39859] check json &#x2d; bot 80&#x25;&#13;&#010;[ba54e59] hardfix&#13;&#010;</title></rect>
+<rect x="500" y="0" width="10" height="500"  class="o"><title>17311 Lines of code, 156 adds, 90 dels&#013;&#010;[247264b] changed bot weights &#x2d; working on new endpoints&#13;&#010;[c1c561a] stupid bug&#13;&#010;[5b7ffd3] hard fix&#13;&#010;[3d5ec90] hard fix post review&#13;&#010;</title></rect>
+<rect x="510" y="0" width="10" height="500"  class="o"><title>17306 Lines of code, 150 adds, 155 dels&#013;&#010;[3c0ac1d] Add some bots&#13;&#010;[070a4eb] changed weights &#x2d; checking vote power&#13;&#010;</title></rect>
+<rect x="520" y="0" width="10" height="500"  class="o"><title>17317 Lines of code, 12 adds, 1 dels&#013;&#010;[da9bcad] Update bot list&#13;&#010;[2a044bd] Added four bots&#13;&#010;</title></rect>
+<rect x="530" y="0" width="10" height="500"  class="o"><title>17366 Lines of code, 89 adds, 40 dels&#013;&#010;[bfad621] Add more bots&#13;&#010;</title></rect>
+<rect x="540" y="0" width="10" height="500"  class="o"><title>17416 Lines of code, 518 adds, 468 dels&#013;&#010;[910d5e7] Add more bots&#13;&#010;[fa08c10] limited to 35 votes&#13;&#010;[28a3575] limit 40&#13;&#010;[8a4c211] new bots&#13;&#010;</title></rect>
+<rect x="550" y="0" width="10" height="500"  class="o"><title>17424 Lines of code, 58 adds, 50 dels&#013;&#010;[92362bd] changed weights&#13;&#010;[24b7be0] save anyways even if github does not respond&#13;&#010;</title></rect>
+<rect x="560" y="0" width="10" height="500"  class="o"><title>17423 Lines of code, 2 adds, 3 dels&#013;&#010;[ae37e0d] bot fix and more time before voting&#13;&#010;[6d4d2f6] utopian&#x2d;bot&#x2e;js&#x3a; remove duplicate bot&#13;&#010;</title></rect>
+<rect x="580" y="0" width="10" height="500"  class="o"><title>17444 Lines of code, 30 adds, 9 dels&#013;&#010;[7f9feef] Added 20 more bots&#x2c; removed duplicate&#13;&#010;[53ac720] bots&#13;&#010;[cb60fee] increased num to 65&#13;&#010;[b7f4d8c] lowered penalty bots &#x2d; added Discord&#13;&#010;[9f490d3] bot penalty to 1&#13;&#010;...and 1 more.</title></rect>
+<rect x="590" y="0" width="10" height="500"  class="o"><title>17505 Lines of code, 928 adds, 867 dels&#013;&#010;[eddd47b] Update utopian&#x2d;bot&#x2e;js&#13;&#010;[26bdec1] Update of the Utopian bot&#13;&#010;[c617c5f] Update utopian&#x2d;bot&#x2e;js&#13;&#010;[d096034] merging and fixing stoodkev PR&#13;&#010;[a51cc1c] start limit 90&#x25;&#13;&#010;...and 3 more.</title></rect>
+<rect x="600" y="0" width="10" height="500"  class="o"><title>17492 Lines of code, 304 adds, 317 dels&#013;&#010;[6ecd23c] Differentiate low quality votes&#13;&#010;[9dec34a] One decimal to low vote&#13;&#010;[27af353] Low quality ratio&#13;&#010;</title></rect>
+<rect x="610" y="0" width="10" height="500"  class="o"><title>17507 Lines of code, 72 adds, 57 dels&#013;&#010;[1601c70] starts from 95&#x25;&#13;&#010;[0819c3f] fixed moderators paid rewards&#13;&#010;[8e93f1d] removed suggestion body in average&#13;&#010;</title></rect>
+<rect x="620" y="0" width="10" height="500"  class="o"><title>17537 Lines of code, 37 adds, 7 dels&#013;&#010;[59fa6bd] Full text search&#x2c; with weight settings&#13;&#010;[46f6722] Clean&#x2d;up&#13;&#010;</title></rect>
+<rect x="630" y="0" width="10" height="500"  class="o"><title>17684 Lines of code, 1823 adds, 1676 dels&#013;&#010;[835be5c] Update bot for new categories&#13;&#010;[6046057] new categories added&#13;&#010;[c97435a] 7 more bots added&#13;&#010;[c3e3eb8] fixed scripts and beneficiaries&#13;&#010;[77bc1ee] package&#13;&#010;</title></rect>
+<rect x="640" y="0" width="10" height="500"  class="o"><title>17698 Lines of code, 25 adds, 11 dels&#013;&#010;[7b1460e] Tuning parameters&#13;&#010;[f96c957] fix starting bot&#13;&#010;[34cf40c] fixed scripts and cat announcements&#13;&#010;[a14f6f0] More bots&#13;&#010;[529c02c] Update utopian&#x2d;bot&#x2e;js&#13;&#010;</title></rect>
+<rect x="650" y="0" width="10" height="500"  class="o"><title>17678 Lines of code, 5 adds, 25 dels&#013;&#010;[ceb896d] removed utopian votes from the stats&#13;&#010;[81cc2c5] Update utopian&#x2d;bot&#x2e;js&#13;&#010;[ad0911f] Taking only Non Private Repo of the User&#13;&#010;</title></rect>
+<rect x="660" y="0" width="10" height="500"  class="o"><title>17679 Lines of code, 4 adds, 3 dels&#013;&#010;[fc05676] done&#13;&#010;[0363f74] removed 1 bot&#13;&#010;[f5508d4] put blog with suggestions&#13;&#010;</title></rect>
+<rect x="670" y="0" width="10" height="500"  class="o"><title>17680 Lines of code, 4 adds, 3 dels&#013;&#010;[063106e] changed sorting under review&#13;&#010;[e9e1119] Effective anti bot algorithm change&#13;&#010;</title></rect>
+<rect x="680" y="0" width="10" height="500"  class="o"><title>17703 Lines of code, 94 adds, 71 dels&#013;&#010;[5cb888c] changed max vote to 60&#13;&#010;[cf21244] Update utopian&#x2d;bot&#x2e;js&#13;&#010;[08f0acb] Update with new bots&#x2c; alphabetize bot list&#13;&#010;[d05cfc5] Update user&#x2e;controller&#x2e;js&#13;&#010;[43bcf31] Removed SemiColon&#13;&#010;</title></rect>
+<rect x="690" y="0" width="10" height="500"  class="o"><title>17759 Lines of code, 793 adds, 737 dels&#013;&#010;[50cadd2] Update README&#x2e;md&#13;&#010;[6415726] Fix max vote&#13;&#010;[d267a04] Several updates&#13;&#010;[3bec469] search only reviewed &#x2d; moderators shares also hidd&#x2e;&#x2e;&#x2e;&#13;&#010;[059140c] new changes&#13;&#010;...and 2 more.</title></rect>
+<rect x="700" y="0" width="10" height="500"  class="o"><title>17744 Lines of code, 664 adds, 679 dels&#013;&#010;[da93d7e] Update utopian&#x2d;bot&#x2e;js&#13;&#010;[dd402e4] Not all blogs or ideas are bad&#13;&#010;[a562f6a] Update utopian&#x2d;bot&#x2e;js&#13;&#010;[c7c74e7] Some blogs and ideas should be able to have nice u&#x2e;&#x2e;&#x2e;&#13;&#010;[3b72a2f] rm human bots and reviewed posts from mods shares&#13;&#010;</title></rect>
+<rect x="710" y="0" width="10" height="500"  class="o"><title>17564 Lines of code, 395 adds, 575 dels&#013;&#010;[4d8fcef] done&#13;&#010;[27a243a] rmv return&#13;&#010;[3330426] localhost&#13;&#010;</title></rect>
+<rect x="720" y="0" width="10" height="500"  class="o"><title>18101 Lines of code, 1029 adds, 492 dels&#013;&#010;[9985dc3] Update Bot List&#13;&#010;[bc456de] improved scoring&#13;&#010;[8aa7bdd] fixed &#x2b; suggestion&#13;&#010;[e36a276] Refactor and use TS Increase future maintainabilit&#x2e;&#x2e;&#x2e;&#13;&#010;[1b6f733] allowJs is no longer necessary in the tsconfig&#13;&#010;</title></rect>
+<rect x="730" y="0" width="10" height="500"  class="o"><title>18101 Lines of code, 2 adds, 2 dels&#013;&#010;[ed30435] Use namespace imports for SteemConnect and steem&#13;&#010;</title></rect>
+<rect x="740" y="0" width="10" height="500"  class="o"><title>18116 Lines of code, 24 adds, 9 dels&#013;&#010;[b9c5555] max vote &#x2d; utopian witness&#13;&#010;[44aec10] localhost&#13;&#010;[955f467] Update Witness Image with My Cool GIF&#13;&#010;</title></rect>
+<rect x="750" y="0" width="10" height="500"  class="o"><title>17994 Lines of code, 977 adds, 1099 dels&#013;&#010;[2e8728b] follow updates&#13;&#010;[7e595be] Update utopian&#x2d;bot&#x2e;js&#13;&#010;[3b9f3fe] Update package&#x2e;json&#13;&#010;</title></rect>
+<rect x="760" y="0" width="10" height="500"  class="o"><title>17997 Lines of code, 569 adds, 566 dels&#013;&#010;[0d65ae5] wording&#13;&#010;[06784fa] merge and wording&#13;&#010;[84e3890] rm return and localhost&#13;&#010;[144f13a] Fix assigned_pool being disregarded&#x2c; causing a com&#x2e;&#x2e;&#x2e;&#13;&#010;[fcf26e6] Remove MONGO_HOST hardcode from NPM scripts&#13;&#010;...and 1 more.</title></rect>
+<rect x="770" y="0" width="10" height="500"  class="o"><title>9620 Lines of code, 1681 adds, 10058 dels&#013;&#010;[32d59ca] Cleanup a lot of unused functionality&#13;&#010;[6d4cc6a] Use typescript for unit testing&#13;&#010;[064544d] Update deps&#13;&#010;[b27d07c] Update package lock&#13;&#010;[0233950] Removed morgan logger&#13;&#010;...and 8 more.</title></rect>
+<rect x="790" y="0" width="10" height="500"  class="o"><title>9662 Lines of code, 57 adds, 15 dels&#013;&#010;[83bd3ef] Allowing for Scope Versions&#13;&#010;[0f2222f] Allow for Github ScopeVersion Authentication&#13;&#010;[7a3d91b] Move Organizational Projects to API End&#13;&#010;</title></rect>
+<rect x="800" y="0" width="10" height="500"  class="o"><title>10478 Lines of code, 1568 adds, 752 dels&#013;&#010;[d877c13] bot improvements&#13;&#010;[6a93091] bot check status&#13;&#010;[0a46674] Fixing Github&#13;&#010;[a3f1c70] Another Attempted Fix for Github&#13;&#010;[7cbfeca] Attempted Fix 2 for Github&#13;&#010;...and 8 more.</title></rect>
+<rect x="810" y="0" width="10" height="500"  class="o"><title>9089 Lines of code, 181 adds, 1570 dels&#013;&#010;[7aa9276] fix&#13;&#010;[ff0d7bb] fix&#13;&#010;[a0fd3b7] Allow Support for Banned Users&#13;&#010;[4e89ab7] Ignore text editors and IDEs&#13;&#010;[31c8b1d] Human Vote Size &#x28;Mod API&#x29;&#13;&#010;...and 1 more.</title></rect>
+<rect x="820" y="0" width="10" height="500"  class="o"><title>9032 Lines of code, 53 adds, 110 dels&#013;&#010;[f7ede6a] Ban Reason Required&#13;&#010;[c43b7a8] Revert &#x22;Human Vote Size &#x28;Mod API&#x29;&#x22;&#13;&#010;[7df21c1] Add getBan feature&#13;&#010;[aabea9c] Add SuperModerator Spec&#x2c; temp bans&#13;&#010;</title></rect>
+<rect x="830" y="0" width="10" height="500"  class="o"><title>9553 Lines of code, 593 adds, 72 dels&#013;&#010;[00ba126] switch to steemit api&#13;&#010;[8cac883] Fix Pending not appearing In Profile Bug&#13;&#010;[4f07f57] working on project delegation&#13;&#010;</title></rect>
+<rect x="840" y="0" width="10" height="500"  class="o"><title>9659 Lines of code, 150 adds, 44 dels&#013;&#010;[e2c9c9b] Add Supermoderator Referral Permissions&#13;&#010;[3642a0d] Nodemon should listen to file changes based on the&#x2e;&#x2e;&#x2e;&#13;&#010;[115e638] Clean up configuration and add strict typing&#13;&#010;[0e9e918] Make SSL certs and keys flexible&#13;&#010;[31e17af] Specify default server port in the config&#13;&#010;</title></rect>
+<rect x="850" y="0" width="10" height="500"  class="o"><title>9669 Lines of code, 11 adds, 1 dels&#013;&#010;[224a36b] Fixed Banning&#13;&#010;</title></rect>
+<rect x="860" y="0" width="10" height="500"  class="o"><title>9672 Lines of code, 5 adds, 2 dels&#013;&#010;[a18ae37] Return an empty projects array when a user&#x27;s GitHu&#x2e;&#x2e;&#x2e;&#13;&#010;</title></rect>
+<rect x="870" y="0" width="10" height="500"  class="o"><title>9601 Lines of code, 468 adds, 539 dels&#013;&#010;[3a09e72] added direct delegation for projects&#13;&#010;[b20b9c0] fix&#13;&#010;[d183abf] fix&#13;&#010;[824c8e5] Check if the post already exists in the DB before &#x2e;&#x2e;&#x2e;&#13;&#010;[721ff6b] Pass the error to the next handler rather than ign&#x2e;&#x2e;&#x2e;&#13;&#010;</title></rect>
+<rect x="880" y="0" width="10" height="500"  class="o"><title>9554 Lines of code, 375 adds, 422 dels&#013;&#010;[9e3fde6] moderation issues&#13;&#010;[b636a28] fix&#13;&#010;[00df793] fix&#13;&#010;[4945f98] Refactor the post update function and fix bugs whe&#x2e;&#x2e;&#x2e;&#13;&#010;[810e5d6] Properly parse boolean values in the request body&#13;&#010;...and 1 more.</title></rect>
+<rect x="890" y="0" width="10" height="500"  class="o"><title>9648 Lines of code, 282 adds, 188 dels&#013;&#010;[46fab0f] Confirm Existence Methods&#13;&#010;[df254b8] added calculation for opted out sponsors&#13;&#010;[9d80407] fixed saving stats on bot&#13;&#010;[44a5a34] increased voting power&#13;&#010;</title></rect>
+<rect x="900" y="0" width="10" height="500"  class="o"><title>9648 Lines of code, 3 adds, 3 dels&#013;&#010;[e763c17] Spelling Changes&#13;&#010;</title></rect>
+<rect x="910" y="0" width="10" height="500"  class="o"><title>9648 Lines of code, 109 adds, 109 dels&#013;&#010;[ed646e8] Adding security&#13;&#010;[b8887aa] Security added in case of null vote&#x2e;&#13;&#010;</title></rect>
+<rect x="930" y="0" width="10" height="500"  class="o"><title>9685 Lines of code, 134 adds, 97 dels&#013;&#010;[19256b5] project sponsors&#13;&#010;[0c24b08] rm gitub token from public&#13;&#010;[f96084b] fix&#13;&#010;[9ecc1bb] debugging&#13;&#010;[dabaf7e] filter&#13;&#010;...and 3 more.</title></rect>
+<rect x="950" y="0" width="10" height="500"  class="o"><title>9686 Lines of code, 21 adds, 20 dels&#013;&#010;[5b1f56a] Use SteemConnect Host&#13;&#010;[1fb5b61] changed voting weights&#13;&#010;[17bff69] fix&#13;&#010;</title></rect>
+<rect x="980" y="0" width="10" height="500"  class="o"><title>9685 Lines of code, 1 adds, 2 dels&#013;&#010;[cb09699] typo&#13;&#010;</title></rect>
+</svg>
